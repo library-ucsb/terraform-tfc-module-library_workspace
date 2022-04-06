@@ -60,7 +60,7 @@ output "github_repo_branches" {
 }
 
 output "github_repo_allows_force_pushes" {
-  value                     = module.github_repository.allows_force_pushes
+  value                     = module.github_branch_protection.allows_force_pushes
 }
 
 output "github_repo_push_restrictions" {
