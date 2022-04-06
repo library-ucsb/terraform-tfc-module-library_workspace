@@ -47,3 +47,8 @@ variable "github_repo_push_restrictions" {
     type        = list(string)
     default     = []  
 }
+
+variable "github_repo_allow_force_pushes" {
+    type        = bool
+    default     = false
+}

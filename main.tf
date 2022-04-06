@@ -8,6 +8,8 @@ locals {
   repo_id                   = module.github_repository.repo_id
 } 
 
+
+
 module "github_repository" {
   source                    = "app.terraform.io/library-ucsb-core/module-github_repository/tfc"
 
@@ -21,6 +23,7 @@ module "github_branch_protection" {
   repository_id             = module.github_repository.node_id
   enforce_admins            = var.github_enforce_admins
   push_restrictions         = var.github_repo_push_restrictions
+  allows_force_pushes       = var.github_repo_allow_force_pushes
 }
 
 data "tfe_oauth_client" "library-ucsb" {
@@ -41,35 +44,37 @@ module "tfc_workspace" {
 
 
 output "github_repo_full_name" {
-  value = module.github_repository.full_name
+  value                     = module.github_repository.full_name
 }
 
 output "github_repo_ssh_clone_url" {
-  value = module.github_repository.ssh_clone_url
+  value                     = module.github_repository.ssh_clone_url
 }
 
 output "github_repo_id" {
-  value = module.github_repository.repo_id
+  value                     = module.github_repository.repo_id
 }
 
 output "github_repo_branches" {
-  value = module.github_repository.branches
+  value                     = module.github_repository.branches
+}
+
+output "github_repo_allows_force_pushes" {
+  value                     = module.github_repository.allows_force_pushes
 }
 
 output "github_repo_push_restrictions" {
-  value = module.github_branch_protection.push_restrictions
+  value                     = module.github_branch_protection.push_restrictions
 }
 
 output "tfc_workspace_id" {
-  value                   = module.tfc_workspace.workspace_id
+  value                     = module.tfc_workspace.workspace_id
 }
 
 output "tfc_workspace_name" {
-  value                   = module.tfc_workspace.name
+  value                     = module.tfc_workspace.name
 }
 
 output "tfc_workspace_working_directory" {
-  value                   = module.tfc_workspace.working_directory
+  value                     = module.tfc_workspace.working_directory
 }
-
-
