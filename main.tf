@@ -57,7 +57,7 @@ output "github_repo_branches" {
 }
 
 output "github_repo_push_restrictions" {
-  value = module.github_repository.push_restrictions
+  value = module.github_branch_protection.push_restrictions
 }
 
 output "tfc_workspace_id" {
