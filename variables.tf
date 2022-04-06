@@ -42,3 +42,8 @@ variable "github_enforce_admins" {
     type        = bool
     default     = true
 }
+
+variable "github_repo_push_restrictions" {
+    type        = list(string)
+    default     = []  
+}

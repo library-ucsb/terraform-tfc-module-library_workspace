@@ -20,6 +20,7 @@ module "github_branch_protection" {
   source                    = "app.terraform.io/library-ucsb-core/module-github_branch_protection/tfc"
   repository_id             = module.github_repository.node_id
   enforce_admins            = var.github_enforce_admins
+  push_restrictions         = var.github_repo_push_restrictions
 }
 
 data "tfe_oauth_client" "library-ucsb" {
@@ -53,6 +54,10 @@ output "github_repo_id" {
 
 output "github_repo_branches" {
   value = module.github_repository.branches
+}
+
+output "github_repo_push_restrictions" {
+  value = module.github_repository.push_restrictions
 }
 
 output "tfc_workspace_id" {
