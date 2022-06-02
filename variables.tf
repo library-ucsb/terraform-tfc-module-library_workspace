@@ -11,6 +11,11 @@ variable "github_organization" {
     type        = string  
 }
 
+variable "tfc_execution_mode" {
+    type        = string
+    default     = "remote" # or local
+}
+
 variable "tfc_organization" {
     type        = string  
 }

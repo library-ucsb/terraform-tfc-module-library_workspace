@@ -8,8 +8,6 @@ locals {
   repo_id                   = module.github_repository.repo_id
 } 
 
-
-
 module "github_repository" {
   source                    = "app.terraform.io/library-ucsb-core/module-github_repository/tfc"
 
@@ -40,6 +38,7 @@ module "tfc_workspace" {
   auto_apply                = var.auto_apply
   vcs_repo_identifier       = module.github_repository.full_name
   vcs_repo_oauth_token_id   = data.tfe_oauth_client.library-ucsb.oauth_token_id
+  execution_mode            = var.tfc_execution_mode
 }
 
 
