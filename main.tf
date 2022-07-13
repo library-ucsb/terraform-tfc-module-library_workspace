@@ -39,6 +39,7 @@ module "tfc_workspace" {
   vcs_repo_identifier       = module.github_repository.full_name
   vcs_repo_oauth_token_id   = data.tfe_oauth_client.library-ucsb.oauth_token_id
   execution_mode            = var.tfc_execution_mode
+  working_directory         = var.tfc_working_directory
 }
 
 

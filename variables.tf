@@ -57,3 +57,8 @@ variable "github_repo_allow_force_pushes" {
     type        = bool
     default     = false
 }
+
+variable "tfc_working_directory" {
+    type        = string
+    default     = "/"  
+}
