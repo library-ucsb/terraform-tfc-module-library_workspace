@@ -9,7 +9,7 @@ locals {
 } 
 
 module "github_repository" {
-  source                    = "app.terraform.io/library-ucsb-core/module-github_repository/tfc"
+  source                    = "github.com/library-ucsb/terraform-tfc-module-github_repository"
 
   name                      = var.name
   visibility                = var.github_repo_visibility
@@ -17,7 +17,7 @@ module "github_repository" {
 }
 
 module "github_branch_protection" {
-  source                    = "app.terraform.io/library-ucsb-core/module-github_branch_protection/tfc"
+  source                    = "github.com/library-ucsb/terraform-tfc-module-github_branch_protection"
   repository_id             = module.github_repository.node_id
   enforce_admins            = var.github_enforce_admins
   push_restrictions         = var.github_repo_push_restrictions
