@@ -29,7 +29,7 @@ data "tfe_oauth_client" "library-ucsb" {
 }
 
 module "tfc_workspace" {
-  source                    = "app.terraform.io/library-ucsb-core/module-tfc_workspace/tfc"
+  source                    = "github.com/library-ucsb/terraform-tfc-module-tfc_workspace"
   
   name                      = var.name
   organization              = var.tfc_organization
